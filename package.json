@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git://github.com/kyosuke/FormattedNumber.git"
   },
-  "author": "Kyosuke",
+  "author": "Kyosuke <info@kyosuke.jp>",
   "license": "MIT",
   "directories": {
     "test": "test"

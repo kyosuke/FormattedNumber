@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['src/**/*.coffee', 'test/**/*.js'],
-      tasks: 'coffee qunit min'
+      tasks: 'coffee qunit min concat'
     }
   });
 

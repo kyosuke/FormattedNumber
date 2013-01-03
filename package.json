@@ -11,5 +11,12 @@
     "url": "git://github.com/kyosuke/FormattedNumber.git"
   },
   "author": "Kyosuke",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "grunt-contrib": "~0.3.0"
+  },
+  "devDependencies": {}
 }

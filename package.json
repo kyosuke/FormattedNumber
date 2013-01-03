@@ -16,7 +16,8 @@
     "test": "test"
   },
   "dependencies": {
-    "grunt-contrib": "~0.3.0"
+    "grunt-contrib": "~0.3.0",
+    "qunitjs": "~1.10.0"
   },
   "devDependencies": {}
 }

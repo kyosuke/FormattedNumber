@@ -7,7 +7,18 @@
 
     function FormattedNumber(val) {
       this.val = val;
+      this.thousandsSeparator = ',';
     }
+
+    FormattedNumber.prototype._addThousandsSeparator = function() {
+      var num, prevNum;
+      num = String(this.val);
+      while (num !== prevNum) {
+        prevNum = num;
+        num = num.replace(/^(-?\d+)(\d{3})/, "$1" + this.thousandsSeparator + "$2");
+      }
+      return num;
+    };
 
     FormattedNumber.prototype.get = function() {
       return this.val;
@@ -18,7 +29,7 @@
     };
 
     FormattedNumber.prototype.toString = function() {
-      return '1,000';
+      return this._addThousandsSeparator();
     };
 
     return FormattedNumber;

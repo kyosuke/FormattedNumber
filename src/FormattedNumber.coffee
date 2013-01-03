@@ -3,7 +3,7 @@ exports = @
 class FormattedNumber
   constructor: (val) ->
     @val = val
-    @thousandsSeparator = ',';
+    @thousandsSeparator = ','
 
   _addThousandsSeparator: ->
     num = String(@val)

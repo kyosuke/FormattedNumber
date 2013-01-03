@@ -40,28 +40,10 @@ module.exports = function(grunt) {
     watch: {
       files: ['src/**/*.coffee', 'test/**/*.js'],
       tasks: 'coffee qunit min'
-    },
-    jshint: {
-      options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        boss: true,
-        eqnull: true,
-        browser: true
-      },
-      globals: {}
-    },
-    uglify: {}
+    }
   });
 
   // Default task.
-  //grunt.registerTask('default', 'lint qunit concat min');
   grunt.registerTask('default', 'coffee qunit min concat');
 
 };

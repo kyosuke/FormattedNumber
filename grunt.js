@@ -1,5 +1,6 @@
 /*global module:false*/
 module.exports = function(grunt) {
+  grunt.loadNpmTasks('grunt-contrib');
 
   // Project configuration.
   grunt.initConfig({
@@ -20,6 +21,12 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: ['<banner:meta.banner>', '<file_strip_banner:lib/<%= pkg.name %>.js>'],
+        dest: 'dist/<%= pkg.name %>.js'
+      }
+    },
+    coffee: {
+      app: {
+        src : 'src/<%= pkg.name %>.coffee',
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -53,6 +60,7 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', 'lint qunit concat min');
+  //grunt.registerTask('default', 'lint qunit concat min');
+  grunt.registerTask('default', 'coffee');
 
 };

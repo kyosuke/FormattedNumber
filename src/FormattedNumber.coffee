@@ -5,6 +5,9 @@ class FormattedNumber
     @val = val
 
   get: -> @val
+  
+  set: (val) ->
+    @val = val
 
   toString: ()->
     '1,000'

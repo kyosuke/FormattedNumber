@@ -13,6 +13,10 @@
       return this.val;
     };
 
+    FormattedNumber.prototype.set = function(val) {
+      return this.val = val;
+    };
+
     FormattedNumber.prototype.toString = function() {
       return '1,000';
     };

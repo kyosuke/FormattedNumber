@@ -5,10 +5,12 @@
 
   FormattedNumber = (function() {
 
-    function FormattedNumber() {}
+    function FormattedNumber(val) {
+      this.val = val;
+    }
 
-    FormattedNumber.prototype.constractor = function(val) {
-      return this.val = val;
+    FormattedNumber.prototype.get = function() {
+      return this.val;
     };
 
     FormattedNumber.prototype.toString = function() {

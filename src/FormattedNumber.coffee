@@ -1,9 +1,10 @@
 exports = @
 
 class FormattedNumber
-  
-  constractor: (val) ->
+  constructor: (val) ->
     @val = val
+
+  get: -> @val
 
   toString: ()->
     '1,000'

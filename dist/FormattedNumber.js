@@ -1,3 +1,6 @@
+/*! FormattedNumber - v0.0.0 - 2013-01-03
+* Copyright (c) 2013 Kyosuke <info@kyosuke.jp>; Licensed MIT */
+
 (function() {
   var FormattedNumber, exports;
 

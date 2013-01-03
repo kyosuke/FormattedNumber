@@ -9,19 +9,20 @@ module.exports = function(grunt) {
       banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
         '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
-    },
-    lint: {
-      files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js']
+        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;' +
+        ' Licensed <%= pkg.license %> */'
     },
     qunit: {
       files: ['test/**/*.html']
     },
     concat: {
       dist: {
-        src: ['<banner:meta.banner>', '<file_strip_banner:lib/<%= pkg.name %>.js>'],
+        src: ['<banner:meta.banner>', '<file_strip_banner:dist/<%= pkg.name %>.js>'],
         dest: 'dist/<%= pkg.name %>.js'
+      },
+      min: {
+        src: ['<banner:meta.banner>', '<file_strip_banner:dist/<%= pkg.name %>.min.js>'],
+        dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
     coffee: {
@@ -32,13 +33,13 @@ module.exports = function(grunt) {
     },
     min: {
       dist: {
-        src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
+        src: 'dist/<%= pkg.name %>.js',
         dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
     watch: {
       files: ['src/**/*.coffee', 'test/**/*.js'],
-      tasks: 'coffee qunit'
+      tasks: 'coffee qunit min'
     },
     jshint: {
       options: {
@@ -61,6 +62,6 @@ module.exports = function(grunt) {
 
   // Default task.
   //grunt.registerTask('default', 'lint qunit concat min');
-  grunt.registerTask('default', 'coffee qunit');
+  grunt.registerTask('default', 'coffee qunit min concat');
 
 };

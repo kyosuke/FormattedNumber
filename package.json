@@ -15,9 +15,9 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "grunt-contrib": "~0.3.0",
     "qunitjs": "~1.10.0"
-  },
-  "devDependencies": {}
+  }
 }
